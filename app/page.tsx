@@ -102,7 +102,7 @@ const Home = () => {
           <div className="w-2/3 pl-6">
             {(hoveredFilm || selectedFilm) && (
               <div className="bg-gray-800 p-4 rounded-lg shadow-md transition-shadow">
-                <h2 className="text-2xl font-bold mb-2 text-white">{hoveredFilm?.title || selectedFilm?.title}</h2>
+                <h2 className="text-2xl font-bold mb-4 text-white">{hoveredFilm?.title || selectedFilm?.title}</h2>
                 <p className="text-sm text-gray-400 mb-4">
                   Episode {hoveredFilm?.episode_id || selectedFilm?.episode_id}
                 </p>
