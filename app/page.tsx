@@ -45,7 +45,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative ">
+    <div className="min-h-screen relative flex flex-col">
       {/* Background Image */}
       <Image
         src={BackgroundImage} 
@@ -60,9 +60,9 @@ const Home = () => {
         <p className="text-lg text-white mt-4 drop-shadow-md">Explore the Star Wars universe!</p>
       </header>
 
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         {/* Sidebar */}
-        <aside className="w-64 bg-gray-800 p-4 text-white shadow-md">
+        <aside className="w-full lg:w-64 bg-gray-800 p-4 text-white shadow-md">
           <h2 className="text-xl font-bold mb-4">Film List</h2>
           {loading ? (
             <p>Loading...</p>
@@ -87,19 +87,19 @@ const Home = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 container mx-auto px-6 flex">
-          <div className="w-1/3 flex items-center justify-center">
+        <main className="flex-1 container mx-auto px-4 lg:px-6 flex flex-col lg:flex-row">
+          <div className="w-full lg:w-1/3 flex items-center justify-center mb-4 lg:mb-0">
             {(hoveredFilm || selectedFilm) && ( 
               <Image
                 src={(hoveredFilm?.imageUrl || selectedFilm?.imageUrl) || '/images/default.jpeg'}
                 alt={hoveredFilm?.title || selectedFilm?.title || 'Star Wars Film'}
                 width={200}
                 height={300}
-                className="object-cover rounded-lg mb-4"
+                className="object-cover rounded-lg"
               />
             )}
           </div>
-          <div className="w-2/3 pl-6">
+          <div className="w-full lg:w-2/3 pl-0 lg:pl-6">
             {(hoveredFilm || selectedFilm) && (
               <div className="bg-gray-800 p-4 rounded-lg shadow-md transition-shadow">
                 <h2 className="text-2xl font-bold mb-4 text-white">{hoveredFilm?.title || selectedFilm?.title}</h2>
